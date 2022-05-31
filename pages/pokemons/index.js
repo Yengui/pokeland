@@ -1,6 +1,6 @@
 export async function getStaticProps(context) {
   const pokemonsData = await fetch(
-    "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
+    "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=48"
   );
   const pokemonsJson = await pokemonsData.json();
   const pokemonsList = pokemonsJson.results;
@@ -12,7 +12,6 @@ export async function getStaticProps(context) {
     const thisPoke = { name: pokemon.name, image: image };
     pokemons.push(thisPoke);
   }
-  console.log(pokemons);
   return {
     props: { pokemons: [...pokemons] },
   };
