@@ -1,3 +1,7 @@
+import { Head } from "next/document";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 export async function getStaticPaths() {
   return {
     paths: [
@@ -52,32 +56,63 @@ export async function getStaticProps({ params }) {
 }
 
 function index({ pokemons }) {
+  const router = useRouter();
+  const { id } = router.query;
+  console.log(id);
+
+  const nextPage = () => {
+    router.push("/pokemons/" + (Number(id) + 1));
+  };
+
+  const previousPage = () => {
+    if (id > 1) {
+      router.push("/pokemons/" + (Number(id) - 1));
+    }
+  };
+
   return (
-    <div className="bg-slate-900">
-      {pokemons.length === 0 ? (
-        <p>no results found...</p>
-      ) : (
-        <section className="py-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-center w-full">
-          {pokemons.map((pokemon, i) => (
-            <div
-              key={"poke" + i}
-              className="w-40 h-60 sm:w-[12.5rem] sm:h-[17.5rem] lg:w-60 lg:h-80 bg-gradient-to-tr from-[#93a5cf] to-[#e4efe9] rounded-tr-xl rounded-bl-xl m-1 sm:m-5 p-1 sm:p-2 flex justify-center items-center flex-col shadow-lg"
-            >
-              <div>
-                <img
-                  src={pokemon.image}
-                  className="w-full h-full object-cover"
-                />
+    <div>
+      <div className="bg-slate-900">
+        {pokemons.length === 0 ? (
+          <p className="text-white text-center">no results found...</p>
+        ) : (
+          <section className="py-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-center w-full">
+            {pokemons.map((pokemon, i) => (
+              <div
+                key={"poke" + i}
+                className="w-40 h-60 cursor-pointer text-slate-900 duration-500 hover:text-slate-300 sm:w-[12.5rem] sm:h-[17.5rem] lg:w-60 lg:h-80 bg-gradient-to-tr hover:bg-none from-[#93a5cf] to-[#e4efe9] m-1 sm:m-5 p-1 sm:p-2 flex justify-center items-center flex-col shadow-lg border border-opacity-0 hover:border-opacity-100 border-slate-300"
+              >
+                <div>
+                  <img
+                    src={pokemon.image}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-xl">{pokemon.name}</h3>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-xl text-slate-900 hover:text-slate-600 hover:cursor-pointer">
-                  {pokemon.name}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </section>
-      )}
+            ))}
+          </section>
+        )}
+      </div>
+      <div className="bg-slate-900 pb-10 pt-5 flex justify-center items-center">
+        <button
+          type="button"
+          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105"
+          onClick={() => previousPage()}
+        >
+          Previous
+        </button>
+
+        <button
+          type="button"
+          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105"
+          onClick={() => nextPage()}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }

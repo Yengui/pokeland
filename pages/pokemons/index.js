@@ -1,3 +1,5 @@
+import { Head } from "next/document";
+
 export async function getStaticProps(context) {
   const pokemonsData = await fetch(
     "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=48"
@@ -19,18 +21,23 @@ export async function getStaticProps(context) {
 
 function index({ pokemons }) {
   return (
-    <div>
-      {pokemons.map((pokemon, i) => (
-        <div key={"poke" + i}>
-          <div>
-            <img src={pokemon.image} />
+    <>
+      <Head>
+        <title>Pokemons</title>
+      </Head>
+      <div>
+        {pokemons.map((pokemon, i) => (
+          <div key={"poke" + i}>
+            <div>
+              <img src={pokemon.image} />
+            </div>
+            <div>
+              <h3>{pokemon.name}</h3>
+            </div>
           </div>
-          <div>
-            <h3>{pokemon.name}</h3>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 
