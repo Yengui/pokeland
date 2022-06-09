@@ -2,19 +2,45 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-export async function getStaticProps() {
-  const pokemonsData = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=48`
-  );
-  const pokemonsJson = await pokemonsData.json();
-  const pokemonsList = pokemonsJson.results;
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { name: "bug" } },
+      { params: { name: "dark" } },
+      { params: { name: "dragon" } },
+      { params: { name: "electric" } },
+      { params: { name: "fairy" } },
+      { params: { name: "fighting" } },
+      { params: { name: "fire" } },
+      { params: { name: "flying" } },
+      { params: { name: "ghost" } },
+      { params: { name: "grass" } },
+      { params: { name: "ground" } },
+      { params: { name: "ice" } },
+      { params: { name: "normal" } },
+      { params: { name: "poison" } },
+      { params: { name: "psychic" } },
+      { params: { name: "rock" } },
+      { params: { name: "steel" } },
+      { params: { name: "water" } },
+    ],
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { name } = params;
+  const pokemonData = await fetch(`https://pokeapi.co/api/v2/type/${name}`);
+  const pokemonJson = await pokemonData.json();
+  const pokemonsList = pokemonJson.pokemon;
   let pokemons = [];
-  for (const pokemon of pokemonsList) {
-    const poke = await fetch(pokemon.url);
+  for (const pkmn of pokemonsList) {
+    const poke = await fetch(pkmn?.pokemon?.url);
     const pokeJson = await poke.json();
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokeJson.id}.png`;
-    const thisPoke = { id: pokeJson.id, name: pokemon.name, image: image };
+    const thisPoke = { id: pokeJson.id, name: pkmn.pokemon.name, image: image };
     pokemons.push(thisPoke);
+    console.log(thisPoke);
   }
   return {
     props: { pokemons: [...pokemons] },
@@ -22,23 +48,6 @@ export async function getStaticProps() {
 }
 
 function index({ pokemons }) {
-  const [loader, setLoader] = useState(false);
-  const [loader2, setLoader2] = useState(false);
-
-  useEffect(() => {
-    setLoader(false);
-    setLoader2(false);
-  }, [pokemons]);
-
-  const router = useRouter();
-
-  const nextPage = () => {
-    if (!loader && !loader2) {
-      router.push("/pokemons/2");
-      setLoader(true);
-    }
-  };
-
   return (
     <div>
       <div className="bg-slate-900">
@@ -67,22 +76,6 @@ function index({ pokemons }) {
             ))}
           </section>
         )}
-      </div>
-      <div className="bg-slate-900 pb-10 pt-5 flex justify-center items-center">
-        <button
-          type="button"
-          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105"
-        >
-          {loader2 ? <div className="lds-dual-ring"></div> : <>Previous</>}
-        </button>
-
-        <button
-          type="button"
-          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105 flex justify-center items-center"
-          onClick={() => nextPage()}
-        >
-          {loader ? <div className="lds-dual-ring"></div> : <>Next</>}
-        </button>
       </div>
     </div>
   );

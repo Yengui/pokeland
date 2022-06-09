@@ -1,4 +1,3 @@
-import { Head } from "next/document";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
@@ -71,8 +70,13 @@ function index({ pokemons }) {
 
   const nextPage = () => {
     if (!loader && !loader2) {
-      router.push("/pokemons/" + (Number(id) + 1));
-      setLoader(true);
+      if (parseInt(id) != id) {
+        router.push("/pokemons/2");
+        setLoader(true);
+      } else {
+        router.push("/pokemons/" + (Number(id) + 1));
+        setLoader(true);
+      }
     }
   };
 
@@ -83,10 +87,6 @@ function index({ pokemons }) {
         setLoader2(true);
       }
     }
-  };
-
-  const checkPokemon = (id) => {
-    router.push("/pokemon/" + id);
   };
 
   return (

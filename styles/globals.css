@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Heebo", sans-serif;
+}
+
 .lds-dual-ring {
   display: inline-block;
   width: 32px;
@@ -24,4 +30,46 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: "pokeHollow";
+  src: url("../fonts/Pokemon\ Hollow.ttf") format("woff"),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url("../fonts/Pokemon\ Hollow.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: "pokeSolid";
+  src: url("../fonts/Pokemon\ Solid.ttf") format("woff"),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url("../fonts/Pokemon\ Solid.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+.pokehollow {
+  font-family: pokeHollow;
+}
+
+.pokesolid {
+  font-family: pokeSolid;
+}
+
+.triangleDivider1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.triangleDivider1 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 79px;
+}
+
+.triangleDivider1 .shape-fill {
+  fill: #0f172a;
 }
