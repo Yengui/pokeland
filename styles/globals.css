@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  font-family: "Heebo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .lds-dual-ring {
@@ -72,4 +72,105 @@
 
 .triangleDivider1 .shape-fill {
   fill: #0f172a;
+}
+
+.triangleDivider1 .shape-fill2 {
+  fill: #f8f4fc;
+}
+
+.anim {
+  scale: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .anim {
+    scale: 0.8;
+    transform: translate(-20px);
+  }
+}
+
+.anim:hover .ball {
+  animation-name: rollingBall;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.anim:hover .txt {
+  animation-name: moveTxt;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.anim .ball {
+  animation-name: rollingBallR;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.anim .txt {
+  animation-name: moveTxtR;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rollingBall {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(-60px) rotate(-360deg);
+  }
+}
+
+@keyframes moveTxt {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(60px);
+  }
+}
+
+@keyframes rollingBallR {
+  from {
+    transform: translateX(-60px) rotate(-360deg);
+  }
+  to {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes moveTxtR {
+  from {
+    transform: translateX(60px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nv span {
+  position: relative;
+}
+
+.nv span:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nv span:hover::after {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nv span::after {
+  content: "";
+  position: absolute;
+  top: 3.1rem;
+  left: 0px;
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
 }
