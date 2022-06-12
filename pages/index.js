@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Particle from "../components/Particle";
 import MainBtn from "../components/MainBtn";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <meta name="description" content="Mini pokemon game" />
         <link rel="icon" href="/icon.png" />
       </Head>
+      <Navbar />
       <div className={styles.banner}>
         <div className={`${styles.bannerbg} relative`}>
           <div className="flex justify-center items-center flex-col pl-4 w-full sm:pl-0 sm:w-1/2 h-full absolute top-0 left-0 z-10">

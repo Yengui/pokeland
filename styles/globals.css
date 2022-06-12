@@ -70,12 +70,32 @@
   height: 79px;
 }
 
+.triangleDivider2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.triangleDivider2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
 .triangleDivider1 .shape-fill {
   fill: #0f172a;
 }
 
 .triangleDivider1 .shape-fill2 {
   fill: #f8f4fc;
+}
+
+.triangleDivider2 .shape-fill3 {
+  fill: #171717;
 }
 
 .anim {
@@ -173,4 +193,24 @@
   background-color: #fff;
   height: 4px;
   width: 100%;
+}
+
+.blaaack {
+  background-color: black !important;
+}
+
+.animnav {
+  animation-name: animnav;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animnav {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translate(0);
+  }
 }

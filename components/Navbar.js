@@ -1,24 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 
 function Navbar() {
+  const [navb, setnavb] = useState(false);
+  const toggleNav = () => {
+    setnavb((state) => !state);
+  };
   return (
-    <div className="flex justify-around items-center h-20 w-full bg-neutral-900 text-white text-xl">
-      <div>
-        <nav className="flex gap-8 nv">
-          <span className="cursor-pointer">Home</span>
-          <span className="cursor-pointer">Pokemon List</span>
+    <div className="sticky top-0 z-20">
+      <div
+        className={
+          navb
+            ? " py-5 w-full bg-neutral-900 text-white text-xl text-center"
+            : "hidden"
+        }
+      >
+        <nav className="animnav flex justify-center items-center  gap-5 flex-col">
+          <Link href={"/"}>
+            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+              Home
+            </div>
+          </Link>
+          <Link href={"/pokemons/1"}>
+            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+              Pokemon List
+            </div>
+          </Link>
+          <Link href={"/game"}>
+            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+              Mini Game
+            </div>
+          </Link>
+          <Link href={"/about-me"}>
+            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+              About Me
+            </div>
+          </Link>
         </nav>
       </div>
-      <img
-        src="/mainpokeball.png"
-        alt="pokeball"
-        className="w-[7.5rem] h-[7.5rem] rounded-full transform translate-y-4 border-[12px] border-neutral-900"
-      />
-      <div>
-        <nav className="flex gap-8 nv">
-          <span className="cursor-pointer">Login</span>
-          <span className="cursor-pointer">Signup</span>
-        </nav>
+      <div className="flex justify-center items-center h-1 w-full bg-neutral-900 text-white text-xl">
+        <img
+          onClick={toggleNav}
+          src="/mainpokeball.png"
+          alt="pokeball"
+          className="w-11 h-11 rounded-full transform translate-y-6 z-10 cursor-pointer hover:rotate-12 duration-300"
+        />
+      </div>
+      <div className="relative">
+        <div className="triangleDivider2">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 0L0 0 598.97 114.72 1200 0z"
+              className="shape-fill3"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   );
