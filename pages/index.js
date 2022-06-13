@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Particle from "../components/Particle";
 import MainBtn from "../components/MainBtn";
 import Navbar from "../components/Navbar";
+import Section1Home from "../components/Section1Home";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/icon.png" />
       </Head>
       <Navbar />
-      <div className={styles.banner}>
+      <section className={styles.banner}>
         <div className={`${styles.bannerbg} relative`}>
           <div className="flex justify-center items-center flex-col pl-4 w-full sm:pl-0 sm:w-1/2 h-full absolute top-0 left-0 z-10">
             <div>
@@ -33,7 +34,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <Section1Home />
     </div>
   );
 }
