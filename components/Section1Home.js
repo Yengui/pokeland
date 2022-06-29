@@ -273,19 +273,19 @@ function Section1Home() {
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 0,
           },
           "@0.75": {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 0,
           },
           "@1.00": {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 0,
           },
           "@1.50": {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 0,
           },
         }}
         grabCursor={true}

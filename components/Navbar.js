@@ -3,8 +3,17 @@ import Link from "next/link";
 
 function Navbar() {
   const [navb, setnavb] = useState(false);
+  const [animclass, setanimclass] = useState(true);
   const toggleNav = () => {
-    setnavb((state) => !state);
+    if (navb === false) {
+      setanimclass((state) => true);
+      setnavb((state) => true);
+    } else {
+      setanimclass((state) => false);
+      setTimeout(() => {
+        setnavb((state) => false);
+      }, 400);
+    }
   };
   return (
     <div className="sticky top-0 z-20">
@@ -15,7 +24,13 @@ function Navbar() {
             : "hidden"
         }
       >
-        <nav className="animnav flex justify-center items-center  gap-5 flex-col">
+        <nav
+          className={
+            animclass
+              ? "animnav flex justify-center items-center  gap-5 flex-col"
+              : "animnav2 flex justify-center items-center  gap-5 flex-col"
+          }
+        >
           <Link href={"/"}>
             <div className="cursor-pointer hover:underline decoration-white decoration-2">
               Home

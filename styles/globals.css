@@ -209,8 +209,28 @@
 @keyframes animnav {
   from {
     transform: translateY(-100%);
+    opacity: 0;
   }
   to {
     transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.animnav2 {
+  animation-name: animnav2;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animnav2 {
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
