@@ -61,9 +61,9 @@ function pokemon({ thisPokemon }) {
   return (
     <>
       <div className=" bg-slate-900 flex justify-center items-center flex-col overflow-hidden">
-        <div className="pokehollow text-white text-5xl sm:text-7xl text-center break-all">
+        <h1 className="pokehollow text-white text-5xl sm:text-7xl text-center break-all">
           {thisPokemon.name}
-        </div>
+        </h1>
         <img
           className=" max-w-xs sm:max-w-md object-cover p-12"
           src={thisPokemon.image}

@@ -5,6 +5,7 @@ import Particle from "../components/Particle";
 import MainBtn from "../components/MainBtn";
 import Navbar from "../components/Navbar";
 import Section1Home from "../components/Section1Home";
+import Section2Home from "../components/Section2Home";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         </div>
       </section>
       <Section1Home />
+      <Section2Home />
     </div>
   );
 }
