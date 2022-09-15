@@ -6,6 +6,7 @@ import MainBtn from "../components/MainBtn";
 import Navbar from "../components/Navbar";
 import Section1Home from "../components/Section1Home";
 import Section2Home from "../components/Section2Home";
+import Section3Home from "../components/Section3Home";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
       </section>
       <Section1Home />
       <Section2Home />
+      <Section3Home />
     </div>
   );
 }

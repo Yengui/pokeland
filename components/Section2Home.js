@@ -3,14 +3,14 @@ import Link from "next/link";
 
 function Section2Home() {
   return (
-    <section className="bg-slate-900 py-12 text-slate-200">
-      <h1 className="pokehollow mx-auto text-5xl sm:text-7xl text-center break-all mb-20 mt-5 underline decoration-4 decoration-yellow-800 decoration-dotted">
+    <section className="bg-slate-900 py-24 text-slate-200">
+      <h1 className="pokehollow mx-auto text-5xl sm:text-7xl text-center break-all mb-24 mt-5 underline decoration-4 decoration-yellow-800 decoration-dotted">
         Discover
       </h1>
       <div className="flex justify-center items-center flex-col sm:flex-row">
         <header className="max-w-sm sm:max-w-md px-10 text-center sm:text-left">
           <h2 className="text-2xl sm:text-5xl font-bold underline decoration-2 hover:text-white">
-            <Link href="/pokemons">Pokemon list</Link>
+            <Link href="/pokemons/1">Pokemon list</Link>
           </h2>
           <p className="mt-4 whitespace-pre-wrap max-w-fit">
             Browse the pokemon list! You might encounter your favorite.

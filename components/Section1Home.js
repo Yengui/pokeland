@@ -244,8 +244,8 @@ export function ActionAreaCard({ name, name2, image, url }) {
 
 function Section1Home() {
   return (
-    <section className="bg-slate-100 py-12">
-      <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-20 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
+    <section className="bg-slate-100 py-24">
+      <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-28 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
         Tv Series
       </h1>
       <Swiper
