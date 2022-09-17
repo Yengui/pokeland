@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Section2Home() {
   return (
-    <section className="bg-slate-900 py-24 text-slate-200">
+    <section className="bg-slate-900 py-24 text-slate-200 overflow-x-hidden">
       <h1 className="pokehollow mx-auto text-5xl sm:text-7xl text-center break-all mb-24 mt-5 underline decoration-4 decoration-yellow-800 decoration-dotted">
         Discover
       </h1>

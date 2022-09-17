@@ -1,7 +1,6 @@
 import React from "react";
 import myphoto from "../images/IMG_20220502_102134.jpg";
 import Image from "next/image";
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons/faEllipsisV";
 import {
   faFacebook,
   faLinkedin,
@@ -40,7 +39,7 @@ const FontAwesomeSvgIcon = React.forwardRef((props, ref) => {
 
 function Section3Home() {
   return (
-    <section className="bg-slate-100 py-12">
+    <section className="bg-slate-100 pt-12 pb-52">
       <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-20 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
         Developers
       </h1>

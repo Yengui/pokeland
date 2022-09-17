@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Section1Home from "../components/Section1Home";
 import Section2Home from "../components/Section2Home";
 import Section3Home from "../components/Section3Home";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Section1Home />
       <Section2Home />
       <Section3Home />
+      <Footer />
     </div>
   );
 }
