@@ -19,7 +19,7 @@ function Footer() {
         </div>
         <h1
           style={{ letterSpacing: "0.3rem" }}
-          className="text-center pokesolid text-white text-6xl pt-20"
+          className="text-center pokesolid text-red-500 text-6xl pt-20"
         >
           Pokeland
         </h1>
