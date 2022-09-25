@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Head from "next/head";
 
 function game() {
   return (
     <>
-      <Navbar />
-      <div>game</div>
+      <Head>
+        <title>Pokegame</title>
+      </Head>
+      <div className="pt-24 pb-52 bg-slate-900 text-slate-200">game</div>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export async function getStaticProps() {
   const pokemonsData = await fetch(
@@ -41,7 +42,10 @@ function index({ pokemons }) {
 
   return (
     <div>
-      <div className="bg-slate-900">
+      <Head>
+        <title>Pokemon List</title>
+      </Head>
+      <div className="bg-slate-900 pt-20">
         {pokemons.length === 0 ? (
           <p className="text-white text-center">no results found...</p>
         ) : (
@@ -68,10 +72,10 @@ function index({ pokemons }) {
           </section>
         )}
       </div>
-      <div className="bg-slate-900 pb-10 pt-5 flex justify-center items-center">
+      <div className="bg-slate-900 pb-52 pt-5 flex justify-center items-center">
         <button
           type="button"
-          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105"
+          className="w-40 h-12 bg-slate-200 text-slate-900 text-xl mx-5 duration-300 hover:scale-105 opacity-30"
         >
           {loader2 ? <div className="lds-dual-ring"></div> : <>Previous</>}
         </button>

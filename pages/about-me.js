@@ -2,6 +2,7 @@ import myphoto from "../images/IMG_20220502_102134.jpg";
 import Image from "next/image";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import Head from "next/head";
 
 const skills = [
   { name: "html", percentage: 95 },
@@ -29,6 +30,9 @@ const skills = [
 function about() {
   return (
     <div>
+      <Head>
+        <title>About Me</title>
+      </Head>
       <section className="bg-slate-900 py-24">
         <div className="px-10 text-slate-200 flex-col-reverse sm:flex-row flex justify-center items-center gap-5 sm:gap-10">
           <section>
@@ -65,7 +69,7 @@ function about() {
           <h1></h1>
         </div>
       </section>
-      <section className="bg-slate-100 py-24">
+      <section className="bg-slate-100 pt-24 pb-52">
         <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-28 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
           My skills
         </h1>

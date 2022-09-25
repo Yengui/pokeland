@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 const pokeTypes = [
   "bug",
@@ -24,7 +25,10 @@ const pokeTypes = [
 
 function types() {
   return (
-    <div className="bg-slate-900 py-24 text-slate-200">
+    <div className="bg-slate-900 pt-24 pb-52 text-slate-200">
+      <Head>
+        <title>Pokemon Types</title>
+      </Head>
       <h1 className="pokehollow underline decoration-dotted decoration-yellow-800 text-center text-5xl sm:text-7xl pb-24">
         Pokemon Types
       </h1>

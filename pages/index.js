@@ -1,23 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Particle from "../components/Particle";
 import MainBtn from "../components/MainBtn";
-import Navbar from "../components/Navbar";
 import Section1Home from "../components/Section1Home";
 import Section2Home from "../components/Section2Home";
 import Section3Home from "../components/Section3Home";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>Pokeland</title>
-        <meta name="description" content="Mini pokemon game" />
-        <link rel="icon" href="/icon.png" />
       </Head>
-      <Navbar />
       <section className={styles.banner}>
         <div className={`${styles.bannerbg} relative`}>
           <div className="flex justify-center items-center flex-col pl-4 w-full sm:pl-0 sm:w-1/2 h-full absolute top-0 left-0 z-10">
@@ -41,7 +34,6 @@ export default function Home() {
       <Section1Home />
       <Section2Home />
       <Section3Home />
-      <Footer />
     </div>
   );
 }

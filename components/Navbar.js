@@ -5,13 +5,14 @@ function Navbar() {
   const [navb, setnavb] = useState(false);
   const [animclass, setanimclass] = useState(true);
   const toggleNav = () => {
+    console.log("toggle");
     if (navb === false) {
-      setanimclass((state) => true);
-      setnavb((state) => true);
+      setanimclass(true);
+      setnavb(true);
     } else {
-      setanimclass((state) => false);
+      setanimclass(false);
       setTimeout(() => {
-        setnavb((state) => false);
+        setnavb(false);
       }, 400);
     }
   };
@@ -32,22 +33,34 @@ function Navbar() {
           }
         >
           <Link href={"/"}>
-            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+            <div
+              className="cursor-pointer hover:underline decoration-white decoration-2"
+              onClick={toggleNav}
+            >
               Home
             </div>
           </Link>
           <Link href={"/pokemons/1"}>
-            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+            <div
+              className="cursor-pointer hover:underline decoration-white decoration-2"
+              onClick={toggleNav}
+            >
               Pokemon List
             </div>
           </Link>
           <Link href={"/game"}>
-            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+            <div
+              className="cursor-pointer hover:underline decoration-white decoration-2"
+              onClick={toggleNav}
+            >
               Mini Game
             </div>
           </Link>
           <Link href={"/about-me"}>
-            <div className="cursor-pointer hover:underline decoration-white decoration-2">
+            <div
+              className="cursor-pointer hover:underline decoration-white decoration-2"
+              onClick={toggleNav}
+            >
               About Me
             </div>
           </Link>

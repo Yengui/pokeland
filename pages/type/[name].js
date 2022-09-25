@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export async function getStaticPaths() {
   return {
@@ -43,14 +42,17 @@ export async function getStaticProps({ params }) {
     console.log(thisPoke);
   }
   return {
-    props: { pokemons: [...pokemons] },
+    props: { pokemons: [...pokemons], typename: name },
   };
 }
 
-function index({ pokemons }) {
+function index({ pokemons, typename }) {
   return (
     <div>
-      <div className="bg-slate-900">
+      <Head>
+        <title>{typename}</title>
+      </Head>
+      <div className="bg-slate-900 pt-24 pb-52">
         {pokemons.length === 0 ? (
           <p className="text-white text-center">no results found...</p>
         ) : (

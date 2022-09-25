@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer() {
   return (
-    <section className="bg-slate-900 text-slate-200">
+    <section className="bg-neutral-900 text-slate-200 border-t-2 border-black">
       <div className="relative -top-40">
         <div className="flex justify-center items-center">
           <Image src={ash} width="166px" height="200px" />
@@ -103,7 +103,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-gray-900 py-3 text-center text-lg">
+      <div className="bg-neutral-800 py-3 text-center text-lg">
         Made with <span className="text-red-500">♥</span> by{" "}
         <a
           href="https://github.com/Yengui"

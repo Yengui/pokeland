@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export async function getStaticPaths() {
   return {
@@ -91,7 +92,10 @@ function index({ pokemons }) {
 
   return (
     <div>
-      <div className="bg-slate-900">
+      <Head>
+        <title>Pokemon list</title>
+      </Head>
+      <div className="bg-slate-900 pt-20">
         {pokemons.length === 0 ? (
           <p className="text-white text-center">no results found...</p>
         ) : (
@@ -118,7 +122,7 @@ function index({ pokemons }) {
           </section>
         )}
       </div>
-      <div className="bg-slate-900 pb-10 pt-5 flex justify-center items-center">
+      <div className="bg-slate-900 pb-52 pt-5 flex justify-center items-center">
         <button
           type="button"
           className={
