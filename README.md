@@ -1,1 +1,1 @@
-pokemon mini game website with NextJS
+pokemon related website with NextJS
