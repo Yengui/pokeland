@@ -292,3 +292,8 @@
   opacity: 0.3;
   clip-path: circle(70px at 100% 0);
 }
+
+.whothat img {
+  filter: contrast(0%);
+  pointer-events: none;
+}
