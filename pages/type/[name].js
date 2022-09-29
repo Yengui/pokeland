@@ -47,7 +47,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function index({ pokemons, typename }) {
+function Index({ pokemons, typename }) {
   return (
     <motion.div
       initial={{ y: -20 }}
@@ -88,4 +88,4 @@ function index({ pokemons, typename }) {
   );
 }
 
-export default index;
+export default Index;

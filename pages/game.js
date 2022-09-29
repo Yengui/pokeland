@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-function game() {
+function Game() {
   const [pokemonName1, setpokemonName1] = useState("");
   const [pokemonName2, setpokemonName2] = useState("");
   const [pokemonName3, setpokemonName3] = useState("");
@@ -194,7 +194,7 @@ function game() {
       </Head>
       <div className="pt-24 pb-52 bg-slate-900 text-slate-200">
         <h1 className="pokehollow mx-auto text-5xl sm:text-7xl text-center mb-24 mt-5 underline decoration-4 decoration-yellow-800 decoration-dotted">
-          Who's that pokemon?
+          Who&apos;s that pokemon?
         </h1>
         {play ? (
           <div className="whothat">
@@ -203,7 +203,7 @@ function game() {
             <img
               src={pokemonImage}
               className="mx-auto"
-              alt="who's that pokemon"
+              alt="whos that pokemon"
             />
             <div className="mx-auto text-center">
               <button
@@ -257,4 +257,4 @@ function game() {
   );
 }
 
-export default game;
+export default Game;

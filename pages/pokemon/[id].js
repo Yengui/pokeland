@@ -58,7 +58,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-function pokemon({ thisPokemon }) {
+function Pokemon({ thisPokemon }) {
   const [info, setInfo] = useState(false);
   return (
     <motion.div
@@ -191,4 +191,4 @@ function pokemon({ thisPokemon }) {
   );
 }
 
-export default pokemon;
+export default Pokemon;

@@ -28,7 +28,7 @@ const skills = [
   { name: "wordpress", percentage: 30 },
 ];
 
-function about() {
+function About() {
   return (
     <motion.div
       initial={{ y: -20 }}
@@ -56,9 +56,9 @@ function about() {
               />
             </div>
             <h2 className="mt-6 text-slate-300 text-center sm:text-left">
-              I'm a cs engineering student.
+              I&apos;m a cs engineering student.
               <br />
-              I'm interested in fullstack web development.
+              I&apos;m interested in fullstack web development.
             </h2>
           </section>
           <div className="hidden sm:block sm:w-60 lg:w-96 border-red-500 border-y-2 lg:border-y-4 rounded-tl-[4rem] rounded-br-[4rem]">
@@ -100,22 +100,10 @@ function about() {
                     text={`${skill.percentage}%`}
                     strokeWidth={5}
                     styles={buildStyles({
-                      // Rotation of path and trail, in number of turns (0-1)
                       rotation: 0.25,
-
-                      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                       strokeLinecap: "butt",
-
-                      // Text size
                       textSize: "16px",
-
-                      // How long animation takes to go from one percentage to another, in seconds
                       pathTransitionDuration: 0.5,
-
-                      // Can specify path transition in more detail, or remove it entirely
-                      // pathTransition: 'none',
-
-                      // Colors
                       pathColor: `rgba(220, 38, 38, ${skill.percentage / 100})`,
                       textColor: "#0f172a",
                       trailColor: "#d6d6d6",
@@ -133,4 +121,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

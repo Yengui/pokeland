@@ -23,7 +23,7 @@ export async function getStaticProps() {
   };
 }
 
-function index({ pokemons }) {
+function Index({ pokemons }) {
   const [loader, setLoader] = useState(false);
   const [loader2, setLoader2] = useState(false);
 
@@ -97,4 +97,4 @@ function index({ pokemons }) {
   );
 }
 
-export default index;
+export default Index;

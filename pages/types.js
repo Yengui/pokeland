@@ -24,7 +24,7 @@ const pokeTypes = [
   "water",
 ];
 
-function types() {
+function Types() {
   return (
     <motion.div
       initial={{ y: -20 }}
@@ -64,4 +64,4 @@ function types() {
   );
 }
 
-export default types;
+export default Types;

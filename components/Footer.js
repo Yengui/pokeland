@@ -80,6 +80,7 @@ function Footer() {
                       <a
                         href="https://www.facebook.com/profile.php?id=100063143803059"
                         target="blank"
+                        rel="noreferrer"
                       >
                         Ahmad Yengui
                       </a>
@@ -91,6 +92,7 @@ function Footer() {
                       <a
                         href="https://www.linkedin.com/in/ahmad-yengui-0392b9241/"
                         target="blank"
+                        rel="noreferrer"
                       >
                         Ahmad Yengui
                       </a>
@@ -99,7 +101,11 @@ function Footer() {
                   <li className="pt-2 underline">
                     <FontAwesomeIcon icon={faGithub} />
                     <span className="pl-3">
-                      <a href="https://github.com/Yengui" target="blank">
+                      <a
+                        href="https://github.com/Yengui"
+                        target="blank"
+                        rel="noreferrer"
+                      >
                         Yengui
                       </a>
                     </span>
@@ -123,6 +129,7 @@ function Footer() {
             href="https://github.com/Yengui"
             className="text-white underline"
             target="blank"
+            rel="noreferrer"
           >
             Yengui
           </a>

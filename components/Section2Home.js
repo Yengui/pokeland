@@ -63,7 +63,7 @@ function Section2Home() {
             <Link href="/game">Pokemon game</Link>
           </h2>
           <p className="mt-4 whitespace-pre-wrap max-w-fit">
-            Wanna play a game? It's gonna be fun!
+            Wanna play a game? It&apos;s gonna be fun!
           </p>
         </header>
         <div className="relative">

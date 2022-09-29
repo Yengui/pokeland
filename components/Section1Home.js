@@ -216,7 +216,7 @@ const seasons = [
 export function ActionAreaCard({ name, name2, image, url }) {
   return (
     <Card sx={{ maxWidth: 345 }} className="mt-4 mb-14 mx-4 max-h-80">
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noreferrer">
         <CardActionArea>
           <CardMedia
             component="img"
