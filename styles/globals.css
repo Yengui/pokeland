@@ -6,6 +6,7 @@
 
 :root {
   --circle-color: #dfe4eb;
+  scroll-behavior: smooth;
 }
 * {
   font-family: "Poppins", sans-serif;

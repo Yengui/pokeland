@@ -4,10 +4,15 @@ import MainBtn from "../components/MainBtn";
 import Section1Home from "../components/Section1Home";
 import Section2Home from "../components/Section2Home";
 import Section3Home from "../components/Section3Home";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>Pokeland</title>
       </Head>
@@ -31,9 +36,51 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Section1Home />
-      <Section2Home />
-      <Section3Home />
-    </div>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        key={"abcd2"}
+      >
+        <Section1Home />
+      </motion.div>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        key={"abcd3"}
+      >
+        <Section2Home />
+      </motion.div>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        key={"abcd4"}
+      >
+        <Section3Home />
+      </motion.div>
+    </motion.div>
   );
 }

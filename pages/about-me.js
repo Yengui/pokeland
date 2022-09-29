@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 const skills = [
   { name: "html", percentage: 95 },
@@ -29,7 +30,11 @@ const skills = [
 
 function about() {
   return (
-    <div>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>About Me</title>
       </Head>
@@ -69,48 +74,62 @@ function about() {
           <h1></h1>
         </div>
       </section>
-      <section className="bg-slate-100 pt-24 pb-52">
-        <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-28 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
-          My skills
-        </h1>
-        <div className="grid justify-center items-center content-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 mx-10">
-          {skills.map((skill, i) => (
-            <div key={"skill" + i} className="text-center text-xl font-bold">
-              <div className="w-20 h-20 sm:w-40 sm:h-40 mx-auto">
-                <CircularProgressbar
-                  value={skill.percentage}
-                  text={`${skill.percentage}%`}
-                  strokeWidth={5}
-                  styles={buildStyles({
-                    // Rotation of path and trail, in number of turns (0-1)
-                    rotation: 0.25,
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        key={"abcd2"}
+      >
+        <section className="bg-slate-100 pt-24 pb-52">
+          <h1 className="pokehollow mx-auto text-red-600 text-5xl sm:text-7xl text-center break-all mb-28 mt-5 underline decoration-4 decoration-yellow-400 decoration-dotted">
+            My skills
+          </h1>
+          <div className="grid justify-center items-center content-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 mx-10">
+            {skills.map((skill, i) => (
+              <div key={"skill" + i} className="text-center text-xl font-bold">
+                <div className="w-20 h-20 sm:w-40 sm:h-40 mx-auto">
+                  <CircularProgressbar
+                    value={skill.percentage}
+                    text={`${skill.percentage}%`}
+                    strokeWidth={5}
+                    styles={buildStyles({
+                      // Rotation of path and trail, in number of turns (0-1)
+                      rotation: 0.25,
 
-                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                    strokeLinecap: "butt",
+                      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                      strokeLinecap: "butt",
 
-                    // Text size
-                    textSize: "16px",
+                      // Text size
+                      textSize: "16px",
 
-                    // How long animation takes to go from one percentage to another, in seconds
-                    pathTransitionDuration: 0.5,
+                      // How long animation takes to go from one percentage to another, in seconds
+                      pathTransitionDuration: 0.5,
 
-                    // Can specify path transition in more detail, or remove it entirely
-                    // pathTransition: 'none',
+                      // Can specify path transition in more detail, or remove it entirely
+                      // pathTransition: 'none',
 
-                    // Colors
-                    pathColor: `rgba(220, 38, 38, ${skill.percentage / 100})`,
-                    textColor: "#0f172a",
-                    trailColor: "#d6d6d6",
-                    backgroundColor: "#3e98c7",
-                  })}
-                />
+                      // Colors
+                      pathColor: `rgba(220, 38, 38, ${skill.percentage / 100})`,
+                      textColor: "#0f172a",
+                      trailColor: "#d6d6d6",
+                      backgroundColor: "#3e98c7",
+                    })}
+                  />
+                </div>
+                <div className="mt-4">{skill.name}</div>
               </div>
-              <div className="mt-4">{skill.name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </motion.div>
+    </motion.div>
   );
 }
 

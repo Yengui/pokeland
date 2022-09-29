@@ -6,6 +6,7 @@ import { SiExpress } from "react-icons/si";
 import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 export async function getServerSideProps(context) {
   const { params } = context;
@@ -60,7 +61,11 @@ export async function getServerSideProps(context) {
 function pokemon({ thisPokemon }) {
   const [info, setInfo] = useState(false);
   return (
-    <>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>{thisPokemon.name}</title>
       </Head>
@@ -182,7 +187,7 @@ function pokemon({ thisPokemon }) {
           </div>
         </div>
       )}
-    </>
+    </motion.div>
   );
 }
 

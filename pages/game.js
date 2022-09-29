@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import { data } from "autoprefixer";
-import { faListSquares } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 function game() {
   const [pokemonName1, setpokemonName1] = useState("");
@@ -185,7 +184,11 @@ function game() {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>Pokegame</title>
       </Head>
@@ -250,7 +253,7 @@ function game() {
           </div>
         )}
       </div>
-    </>
+    </motion.div>
   );
 }
 

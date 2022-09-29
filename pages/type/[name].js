@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 export async function getStaticPaths() {
   return {
@@ -48,7 +49,11 @@ export async function getStaticProps({ params }) {
 
 function index({ pokemons, typename }) {
   return (
-    <div>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>{typename}</title>
       </Head>
@@ -79,7 +84,7 @@ function index({ pokemons, typename }) {
           </section>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

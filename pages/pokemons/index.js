@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 export async function getStaticProps() {
   const pokemonsData = await fetch(
@@ -41,7 +42,11 @@ function index({ pokemons }) {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.75 }}
+    >
       <Head>
         <title>Pokemon List</title>
       </Head>
@@ -88,7 +93,7 @@ function index({ pokemons }) {
           {loader ? <div className="lds-dual-ring"></div> : <>Next</>}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
